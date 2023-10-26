@@ -1,8 +1,8 @@
 export class Frase {
-    async getFrasePorCategoria(categoria) { // hace una petición get a la API
+    async getFrasePorCategoria(categoria) { 
       const url = `https://api.chucknorris.io/jokes/random?category=${categoria}`;
       const response = await fetch(url); //obtiene una frase aleat por categoría
-      const data = await response.json(); //
+      const data = await response.json(); 
       return data.value;//devuelve la frase
     }
   

@@ -2,29 +2,27 @@ import { Frase } from "./Frase.js";
 
 export class Frases {
   constructor() {
-    this.api = new Frase(); 
-    this.urlParams = new URLSearchParams(window.location.search); // se utiliza para analizar y manipular los parámetros de la cadena de consulta
-    this.categoria = this.urlParams.get('categoria'); // http:...?categoria=explicit --> sacará explicit
+    this.frase = new Frase(); 
+    this.url = new URLSearchParams(window.location.search); // se utiliza para analizar y manipular los parámetros de la cadena de consulta
+    this.categoria = this.url.get('categoria'); // http:...?categoria=explicit --> sacará explicit
   }
 
   async mostrarFrasePorCategoria() {
     if (this.categoria) {
-      const frase = await this.api.getFrasePorCategoria(this.categoria); /// hace una petición get a la API
-      const contenedor = document.getElementById('frase');
-      contenedor.textContent = frase; // mete la frase en el html
+      const fraseCategoria = await this.frase.getFrasePorCategoria(this.categoria); 
+      const div = document.getElementById('frase');
+      div.textContent = fraseCategoria; // mete la frase en el html
     } else {
       this.mostrarFraseRandom();
     }
   }
 
   async mostrarFraseRandom() {
-    const frase = await this.api.getFraseRandom();
-    const contenedor = document.getElementById('frase');
-    contenedor.textContent = frase;
+    const fraseRandom = await this.frase.getFraseRandom();
+    const div = document.getElementById('frase');
+    div.textContent = fraseRandom;
   }
 }
 
 const frases = new Frases();
-document.addEventListener('DOMContentLoaded', () => { //DOMContentLoaded --> se dispara cuando el documento HTML ha sido completamente cargado y parseado, evitando errores
-  frases.mostrarFrasePorCategoria();
-});
+frases.mostrarFrasePorCategoria();

@@ -1,7 +1,7 @@
 import { Categoria } from "./Categoria.js";
 
 async function mostrarCategorias() { 
-    const categoria = new Categoria(); // hace una petición get a la API
+    const categoria = new Categoria(); 
     const data =  await categoria.obtenerCategorias();  ///llama al método obtenerCategorias para obtener las categorías
 
     const tabla = document.getElementById('tabla'); 
