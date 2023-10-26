@@ -1,4 +1,4 @@
-import { Frase } from "./Frase.js";
+import { Frase } from "./clases.js";
 
 export class Frases {
   constructor() {
