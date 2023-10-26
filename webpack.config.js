@@ -2,8 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: './src/app.js',
-    about: './src/frases.js'
+    app: './src/app.js',
+    frases: './src/frases.js'
   },
   output: {
     filename: '[name].main.js',
