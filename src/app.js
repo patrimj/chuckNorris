@@ -1,4 +1,4 @@
-import { Categoria } from "./clases.js";
+import { Categoria } from "./Clases.js";
 
 async function mostrarCategorias() { 
     const categoria = new Categoria(); 
