@@ -25,6 +25,6 @@ export class Frases {
 }
 
 const frases = new Frases();
-document.addEventListener('DOMContentLoaded', () => { //DOMContentLoaded --> se dispara cuando el documento HTML ha sido completamente cargado y parseado, evitando errores de carga de recursos externos (CSS o JS)
+document.addEventListener('DOMContentLoaded', () => { //DOMContentLoaded --> se dispara cuando el documento HTML ha sido completamente cargado y parseado, evitando errores
   frases.mostrarFrasePorCategoria();
 });
